@@ -28,8 +28,9 @@ def test_category_count(category_1, category_2, category_3):
 
 
 def test_product_count_with_products(category_prod):
+    category1, category2 = category_prod  # Распаковываем категории
     # Проверяем, что количество продуктов увеличилось
-    assert Category.product_count == 4  # 3 в первой категории + 1 во второй категории
+    assert Category.product_count == len(category1.products) + len(category2.products)
 
 
 def test_product_count_without_products(without_products):
