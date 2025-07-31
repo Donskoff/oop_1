@@ -3,27 +3,27 @@
 from src.main import Category
 
 
-def test_product_init(init_product):
-    assert init_product.name == "Iphone 15"
-    assert init_product.description == "512GB, Gray space"
-    assert init_product.price == 210000.0
-    assert init_product.quantity == 8
+def test_product(product):
+    assert product.name == "Iphone 15"
+    assert product.description == "512GB, Gray space"
+    assert product.price == 210000.0
+    assert product.quantity == 8
 
 
-def test_init_category(init_category):
-    assert init_category.name == "Смартфоны"
+def test_init_category(category):
+    assert category.name == "Смартфоны"
     assert (
-        init_category.description
+        category.description
         == "Смартфоны, как средство не только коммуникации, \
     но и получения дополнительных функций для удобства жизни"
     )
-    assert init_category.products == []
+    assert category.products == []
 
-    assert init_category.category_count == 1
-    assert init_category.product_count == 0
+    assert category.category_count == 1
+    assert category.product_count == 0
 
 
-def test_category_count(category):
+def test_category_count(category_1, category_2, category_3):
     assert Category.category_count == 3
 
 
